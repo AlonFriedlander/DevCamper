@@ -3,11 +3,11 @@ const {
   register,
   login,
 //   logout,
-  getMe
-//   forgotPassword,
-//   resetPassword,
-//   updateDetails,
-//   updatePassword,
+  getMe,
+  forgotPassword,
+  resetPassword,
+  updateDetails,
+  updatePassword,
 //   confirmEmail,
 } = require('../controllers/auth');
 
@@ -20,9 +20,9 @@ router.post('/login', login);
 // router.get('/logout', logout);
 router.get('/me', protect, getMe);
 // router.get('/confirmemail', confirmEmail);
-// router.put('/updatedetails', protect, updateDetails);
-// router.put('/updatepassword', protect, updatePassword);
-// router.post('/forgotpassword', forgotPassword);
-// router.put('/resetpassword/:resettoken', resetPassword);
+router.put('/updatedetails', protect, updateDetails);
+router.put('/updatepassword', protect, updatePassword);
+router.post('/forgotpassword', forgotPassword);
+router.put('/resetpassword/:resettoken', resetPassword);
 
 module.exports = router;
